@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+<div>
+    <canvas #canvas></canvas>
+</div>
+<p>RxCompoent.message: {{message}}</p>
+<button
+  [disabled]="service.started$ | async"
+  (click)="listen()"
+>listen</button>
+<p>lang: ja</p>
+<p>grammars: none</p>
+
+<router-outlet></router-outlet>
