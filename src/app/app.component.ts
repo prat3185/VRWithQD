@@ -4,7 +4,10 @@ import {
   RxSpeechRecognitionService,
   resultList,
 } from '@kamiazya/ngx-speech-recognition';
+import { DoodleDrawServiceService } from 'src/Services/doodle-draw-service.service';
 
+
+declare var nlp:any;
 
 @Component({
   selector: 'app-root',
@@ -12,13 +15,18 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit,OnInit {
+
   title = 'DrawDoodle';
-  url = 'https://quickdrawfiles.appspot.com/drawing/car?isAnimated=false&format=json&key=';
-  key='AIzaSyCLxdiMV5-46xuFWFbdDhVoJi7DMwe-H9Q'
-  cat:any;
+  url = 'https://quickdrawfiles.appspot.com/drawing/';
+  properties='?isAnimated=false&format=json&key=';
+  key='AIzaSyCLxdiMV5-46xuFWFbdDhVoJi7DMwe-H9Q';
+  ObjectToDraw='cat';
+  RandomArray:any[]=["cat","dog","table","chair","watch","sheep","fish","flower","monkey"]
+  drawing:any;
+  drawSuccess:boolean=true;
   message:string="";
 
-  constructor(private http:HttpClient, public service: RxSpeechRecognitionService){
+  constructor(private http:HttpClient, public service: RxSpeechRecognitionService, private drawService:DoodleDrawServiceService){
 
   }
 
@@ -52,9 +60,19 @@ export class AppComponent implements AfterViewInit,OnInit {
   }
 
   getContentJSON() {
-    this.http.get(this.url+this.key).subscribe((data)=>{
-        this.cat=data['drawing'];
+    this.http.get(this.url+this.ObjectToDraw+this.properties+this.key).subscribe((data)=>{
+        if(data['recognized']==true){
+        this.drawSuccess=true;
+        this.cx.clearRect(0, 0, this.width, this.height);
+        this.drawing=data['drawing'];
         this.draw();
+        }
+        else{
+          this.getContentJSON();
+        }
+    },(err)=>{
+        console.log("Cannnot find image for "+ this.ObjectToDraw);
+        this.drawSuccess=false;
     });
   }
 
@@ -81,24 +99,23 @@ drawOnCanvas(prevPos: { x: number, y: number }, currentPos: { x: number, y: numb
 }
 
 draw() {
-  debugger;
   let strokeIndex = 0;
   let index = 0;
   let prevx, prevy;
-  while (this.cat) {
-    let x = this.cat[strokeIndex][0][index];
-    let y = this.cat[strokeIndex][1][index];
+  while (this.drawing) {
+    let x = this.drawing[strokeIndex][0][index];
+    let y = this.drawing[strokeIndex][1][index];
     if (prevx !== undefined) {
       this.drawOnCanvas({x:prevx, y:prevy}, {x, y});
     }
     index++;
-    if (index === this.cat[strokeIndex][0].length) {
+    if (index === this.drawing[strokeIndex][0].length) {
       strokeIndex++;
       prevx = undefined;
       prevy = undefined;
       index = 0;
-      if (strokeIndex === this.cat.length) {
-        this.cat = undefined;
+      if (strokeIndex === this.drawing.length) {
+        this.drawing = undefined;
         strokeIndex = 0;
         //setTimeout(newCat, 100);
       }
@@ -109,6 +126,55 @@ draw() {
   }
 }
 
+getNouns(speech:string){
+  let doc=nlp(speech).nouns().list[0];
+  return doc? doc.terms:[];
+}
+
+performAction(action:string){
+  if(action.toLocaleLowerCase()=="draw"){
+    this.performDrawAction();
+  }
+  else if(action.toLocaleLowerCase()=="draw"){
+    this.drawRandom();
+  }
+  else{
+    this.performDrawNext();
+  }
+}
+
+performDrawAction(){
+let nouns=this.getNouns(this.message);
+if(nouns.length>0){
+  for(var i=0;i<nouns.length;i++){
+    this.ObjectToDraw=nouns[i].text;
+    this.getContentJSON();
+    break;
+  }
+}
+}
+
+drawRandom(){
+  if(this.getNouns(this.message).length>0){
+    this.performDrawAction();
+  }
+  else{
+    this.ObjectToDraw=this.RandomArray[Math.floor(Math.random() * this.RandomArray.length)];
+    this.getContentJSON();
+  }
+}
+
+performDrawNext()
+{
+  if(this.getNouns(this.message).length>0){
+    this.performDrawAction();
+  }
+  else{
+    this.getContentJSON();
+  }
+}
+
+
 listen() {
   this.service
     .listen()
@@ -116,6 +182,22 @@ listen() {
     .subscribe((list: SpeechRecognitionResultList) => {
       this.message = list.item(0).item(0).transcript;
       console.log('RxComponent:onresult', this.message, list);
+      this.drawService.getAction(this.message).subscribe((data)=>{
+        console.log(data.res['srcAnswer']);
+        if(data.res['srcAnswer']==undefined || data.res['srcAnswer']==null){
+          let nouns=this.getNouns(this.message);
+          if(nouns.length>0)
+          {
+              this.performDrawAction();
+          }
+          else{
+            console.log("I didn't get it");
+          }
+        }
+        else{
+              this.performAction(data.res['srcAnswer']);
+        }
+      });
     });
 }
 }

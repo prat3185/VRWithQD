@@ -1,0 +1,876 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ]
+  },
+  "nluManager": {
+    "settings": {},
+    "languages": [
+      "en"
+    ],
+    "intentDomains": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "language": "en",
+          "config": {
+            "activation": "leaky-relu",
+            "hiddenLayers": [],
+            "iterations": 20000,
+            "learningRate": 0.8,
+            "errorThresh": 0.00005,
+            "momentum": 0.5,
+            "deltaErrorThresh": 0.000001,
+            "maxDecimals": 9,
+            "leakyReluAlpha": 0.06,
+            "timeout": 120000
+          }
+        },
+        "language": "en",
+        "nluClassName": "BrainNLU",
+        "useMasterDomain": true,
+        "trainByDomain": true,
+        "keepStopwords": true,
+        "stemDict": {
+          "can,have,next,one,we": {
+            "domain": "default",
+            "intent": "action.next"
+          },
+          "chang,pictur,pleas,the": {
+            "domain": "default",
+            "intent": "action.next"
+          },
+          "do,i,like,not,pic,this": {
+            "domain": "default",
+            "intent": "action.next"
+          },
+          "chang,imag,the": {
+            "domain": "default",
+            "intent": "action.next"
+          },
+          "move,next,to": {
+            "domain": "default",
+            "intent": "action.next"
+          },
+          "anoth,one,show": {
+            "domain": "default",
+            "intent": "action.next"
+          },
+          "draw,els,someth": {
+            "domain": "default",
+            "intent": "action.random"
+          },
+          "a,draw,pictur,random": {
+            "domain": "default",
+            "intent": "action.random"
+          },
+          "draw,random,someth": {
+            "domain": "default",
+            "intent": "action.random"
+          },
+          "a,draw,tiger": {
+            "domain": "default",
+            "intent": "action.draw"
+          },
+          "a,can,draw,have,of,tiger,we": {
+            "domain": "default",
+            "intent": "action.draw"
+          },
+          "a,can,draw,for,tiger,us,you": {
+            "domain": "default",
+            "intent": "action.draw"
+          }
+        },
+        "intentDict": {
+          "action.next": "default",
+          "action.random": "default",
+          "action.draw": "default"
+        },
+        "useStemDict": true,
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "language": "en",
+              "config": {
+                "activation": "leaky-relu",
+                "hiddenLayers": [],
+                "iterations": 20000,
+                "learningRate": 0.8,
+                "errorThresh": 0.00005,
+                "momentum": 0.5,
+                "deltaErrorThresh": 0.000001,
+                "maxDecimals": 9,
+                "leakyReluAlpha": 0.06,
+                "timeout": 120000
+              }
+            },
+            "language": "en",
+            "keepStopwords": true,
+            "docs": [
+              {
+                "intent": "default",
+                "utterance": [
+                  "can",
+                  "we",
+                  "have",
+                  "next",
+                  "one"
+                ],
+                "tokens": [
+                  "can",
+                  "we",
+                  "have",
+                  "next",
+                  "one"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "pleas",
+                  "chang",
+                  "the",
+                  "pictur"
+                ],
+                "tokens": [
+                  "pleas",
+                  "chang",
+                  "the",
+                  "pictur"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "i",
+                  "do",
+                  "not",
+                  "like",
+                  "this",
+                  "pic"
+                ],
+                "tokens": [
+                  "i",
+                  "do",
+                  "not",
+                  "like",
+                  "this",
+                  "pic"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "chang",
+                  "the",
+                  "imag"
+                ],
+                "tokens": [
+                  "chang",
+                  "the",
+                  "imag"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "move",
+                  "to",
+                  "next"
+                ],
+                "tokens": [
+                  "move",
+                  "to",
+                  "next"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "show",
+                  "anoth",
+                  "one"
+                ],
+                "tokens": [
+                  "show",
+                  "anoth",
+                  "one"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "someth",
+                  "els"
+                ],
+                "tokens": [
+                  "draw",
+                  "someth",
+                  "els"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "random",
+                  "pictur"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "random",
+                  "pictur"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "someth",
+                  "random"
+                ],
+                "tokens": [
+                  "draw",
+                  "someth",
+                  "random"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "tiger"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "tiger"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "can",
+                  "we",
+                  "have",
+                  "a",
+                  "draw",
+                  "of",
+                  "tiger"
+                ],
+                "tokens": [
+                  "can",
+                  "we",
+                  "have",
+                  "a",
+                  "draw",
+                  "of",
+                  "tiger"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "can",
+                  "you",
+                  "draw",
+                  "a",
+                  "tiger",
+                  "for",
+                  "us"
+                ],
+                "tokens": [
+                  "can",
+                  "you",
+                  "draw",
+                  "a",
+                  "tiger",
+                  "for",
+                  "us"
+                ]
+              }
+            ],
+            "features": {
+              "can": 3,
+              "we": 2,
+              "have": 2,
+              "next": 2,
+              "one": 2,
+              "pleas": 1,
+              "chang": 2,
+              "the": 2,
+              "pictur": 2,
+              "i": 1,
+              "do": 1,
+              "not": 1,
+              "like": 1,
+              "this": 1,
+              "pic": 1,
+              "imag": 1,
+              "move": 1,
+              "to": 1,
+              "show": 1,
+              "anoth": 1,
+              "draw": 6,
+              "someth": 2,
+              "els": 1,
+              "a": 4,
+              "random": 2,
+              "tiger": 3,
+              "of": 1,
+              "you": 1,
+              "for": 1,
+              "us": 1
+            },
+            "isEditing": false,
+            "className": "BrainNLU",
+            "classifier": {
+              "className": "BrainClassifier",
+              "settings": {
+                "language": "en",
+                "config": {
+                  "activation": "leaky-relu",
+                  "hiddenLayers": [],
+                  "iterations": 20000,
+                  "learningRate": 0.8,
+                  "errorThresh": 0.00005,
+                  "momentum": 0.5,
+                  "deltaErrorThresh": 0.000001,
+                  "maxDecimals": 9,
+                  "leakyReluAlpha": 0.06,
+                  "timeout": 120000
+                }
+              },
+              "labels": [],
+              "network": {
+                "layers": [],
+                "trainOpts": {
+                  "iterations": 20000,
+                  "errorThresh": 0.00005,
+                  "deltaErrorThresh": 0.000001,
+                  "learningRate": 0.8,
+                  "momentum": 0.5,
+                  "leakyReluAlpha": 0.06,
+                  "maxDecimals": 9
+                }
+              }
+            }
+          },
+          "default": {
+            "settings": {
+              "language": "en",
+              "config": {
+                "activation": "leaky-relu",
+                "hiddenLayers": [],
+                "iterations": 20000,
+                "learningRate": 0.8,
+                "errorThresh": 0.00005,
+                "momentum": 0.5,
+                "deltaErrorThresh": 0.000001,
+                "maxDecimals": 9,
+                "leakyReluAlpha": 0.06,
+                "timeout": 120000
+              }
+            },
+            "language": "en",
+            "keepStopwords": true,
+            "docs": [
+              {
+                "intent": "action.next",
+                "utterance": [
+                  "can",
+                  "we",
+                  "have",
+                  "next",
+                  "one"
+                ],
+                "tokens": [
+                  "can",
+                  "we",
+                  "have",
+                  "next",
+                  "one"
+                ]
+              },
+              {
+                "intent": "action.next",
+                "utterance": [
+                  "pleas",
+                  "chang",
+                  "the",
+                  "pictur"
+                ],
+                "tokens": [
+                  "pleas",
+                  "chang",
+                  "the",
+                  "pictur"
+                ]
+              },
+              {
+                "intent": "action.next",
+                "utterance": [
+                  "i",
+                  "do",
+                  "not",
+                  "like",
+                  "this",
+                  "pic"
+                ],
+                "tokens": [
+                  "i",
+                  "do",
+                  "not",
+                  "like",
+                  "this",
+                  "pic"
+                ]
+              },
+              {
+                "intent": "action.next",
+                "utterance": [
+                  "chang",
+                  "the",
+                  "imag"
+                ],
+                "tokens": [
+                  "chang",
+                  "the",
+                  "imag"
+                ]
+              },
+              {
+                "intent": "action.next",
+                "utterance": [
+                  "move",
+                  "to",
+                  "next"
+                ],
+                "tokens": [
+                  "move",
+                  "to",
+                  "next"
+                ]
+              },
+              {
+                "intent": "action.next",
+                "utterance": [
+                  "show",
+                  "anoth",
+                  "one"
+                ],
+                "tokens": [
+                  "show",
+                  "anoth",
+                  "one"
+                ]
+              },
+              {
+                "intent": "action.random",
+                "utterance": [
+                  "draw",
+                  "someth",
+                  "els"
+                ],
+                "tokens": [
+                  "draw",
+                  "someth",
+                  "els"
+                ]
+              },
+              {
+                "intent": "action.random",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "random",
+                  "pictur"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "random",
+                  "pictur"
+                ]
+              },
+              {
+                "intent": "action.random",
+                "utterance": [
+                  "draw",
+                  "someth",
+                  "random"
+                ],
+                "tokens": [
+                  "draw",
+                  "someth",
+                  "random"
+                ]
+              },
+              {
+                "intent": "action.draw",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "tiger"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "tiger"
+                ]
+              },
+              {
+                "intent": "action.draw",
+                "utterance": [
+                  "can",
+                  "we",
+                  "have",
+                  "a",
+                  "draw",
+                  "of",
+                  "tiger"
+                ],
+                "tokens": [
+                  "can",
+                  "we",
+                  "have",
+                  "a",
+                  "draw",
+                  "of",
+                  "tiger"
+                ]
+              },
+              {
+                "intent": "action.draw",
+                "utterance": [
+                  "can",
+                  "you",
+                  "draw",
+                  "a",
+                  "tiger",
+                  "for",
+                  "us"
+                ],
+                "tokens": [
+                  "can",
+                  "you",
+                  "draw",
+                  "a",
+                  "tiger",
+                  "for",
+                  "us"
+                ]
+              }
+            ],
+            "features": {
+              "can": 3,
+              "we": 2,
+              "have": 2,
+              "next": 2,
+              "one": 2,
+              "pleas": 1,
+              "chang": 2,
+              "the": 2,
+              "pictur": 2,
+              "i": 1,
+              "do": 1,
+              "not": 1,
+              "like": 1,
+              "this": 1,
+              "pic": 1,
+              "imag": 1,
+              "move": 1,
+              "to": 1,
+              "show": 1,
+              "anoth": 1,
+              "draw": 6,
+              "someth": 2,
+              "els": 1,
+              "a": 4,
+              "random": 2,
+              "tiger": 3,
+              "of": 1,
+              "you": 1,
+              "for": 1,
+              "us": 1
+            },
+            "isEditing": false,
+            "className": "BrainNLU",
+            "classifier": {
+              "className": "BrainClassifier",
+              "settings": {
+                "language": "en",
+                "config": {
+                  "activation": "leaky-relu",
+                  "hiddenLayers": [],
+                  "iterations": 20000,
+                  "learningRate": 0.8,
+                  "errorThresh": 0.00005,
+                  "momentum": 0.5,
+                  "deltaErrorThresh": 0.000001,
+                  "maxDecimals": 9,
+                  "leakyReluAlpha": 0.06,
+                  "timeout": 120000
+                }
+              },
+              "labels": [],
+              "network": {
+                "sizes": [
+                  30,
+                  3
+                ],
+                "layers": [
+                  {
+                    "can": {},
+                    "we": {},
+                    "have": {},
+                    "next": {},
+                    "one": {},
+                    "pleas": {},
+                    "chang": {},
+                    "the": {},
+                    "pictur": {},
+                    "i": {},
+                    "do": {},
+                    "not": {},
+                    "like": {},
+                    "this": {},
+                    "pic": {},
+                    "imag": {},
+                    "move": {},
+                    "to": {},
+                    "show": {},
+                    "anoth": {},
+                    "draw": {},
+                    "someth": {},
+                    "els": {},
+                    "a": {},
+                    "random": {},
+                    "tiger": {},
+                    "of": {},
+                    "you": {},
+                    "for": {},
+                    "us": {}
+                  },
+                  {
+                    "action.next": {
+                      "bias": 5.41933918,
+                      "weights": {
+                        "can": 0.507690251,
+                        "we": 0.62597841,
+                        "have": 0.62597841,
+                        "next": 4.743980408,
+                        "one": 4.743957996,
+                        "pleas": 1.745776176,
+                        "chang": 4.329497814,
+                        "the": 4.329497814,
+                        "pictur": 0.847334623,
+                        "i": 1.874621034,
+                        "do": 1.874621034,
+                        "not": 1.874621034,
+                        "like": 1.874621034,
+                        "this": 1.874621034,
+                        "pic": 1.874621034,
+                        "imag": 2.583721876,
+                        "move": 3.251603603,
+                        "to": 3.251603603,
+                        "show": 3.251580715,
+                        "anoth": 3.251580715,
+                        "draw": -3.361003637,
+                        "someth": -1.19795835,
+                        "els": -0.86021024,
+                        "a": -2.163044453,
+                        "random": -1.236189604,
+                        "tiger": -1.264603019,
+                        "of": -0.866395772,
+                        "you": -0.118288323,
+                        "for": -0.118288323,
+                        "us": -0.118288323
+                      }
+                    },
+                    "action.random": {
+                      "bias": 1.079229116,
+                      "weights": {
+                        "can": -1.385349631,
+                        "we": -0.765027523,
+                        "have": -0.765027523,
+                        "next": -0.422174782,
+                        "one": -0.419358104,
+                        "pleas": -1.74318397,
+                        "chang": -1.809218764,
+                        "the": -1.809218764,
+                        "pictur": 4.359075546,
+                        "i": -0.236745209,
+                        "do": -0.236745209,
+                        "not": -0.236745209,
+                        "like": -0.236745209,
+                        "this": -0.236745209,
+                        "pic": -0.236745209,
+                        "imag": -0.066034883,
+                        "move": -0.422174782,
+                        "to": -0.422174782,
+                        "show": -0.419358104,
+                        "anoth": -0.419358104,
+                        "draw": 5.049319267,
+                        "someth": 4.993971825,
+                        "els": 5.267734528,
+                        "a": 0.055345356,
+                        "random": 5.828496456,
+                        "tiger": -6.04691124,
+                        "of": -0.765027523,
+                        "you": -0.620322108,
+                        "for": -0.620322108,
+                        "us": -0.620322108
+                      }
+                    },
+                    "action.draw": {
+                      "bias": 0.534134269,
+                      "weights": {
+                        "can": -0.153790727,
+                        "we": -0.299620599,
+                        "have": -0.299620599,
+                        "next": -1.388014436,
+                        "one": -1.384042621,
+                        "pleas": -0.112117335,
+                        "chang": -0.219289795,
+                        "the": -0.219289795,
+                        "pictur": -3.864544392,
+                        "i": -0.113431133,
+                        "do": -0.113431133,
+                        "not": -0.113431133,
+                        "like": -0.113431133,
+                        "this": -0.113431133,
+                        "pic": -0.113431133,
+                        "imag": -0.107172452,
+                        "move": -0.049191691,
+                        "to": -0.049191691,
+                        "show": -0.045219876,
+                        "anoth": -0.045219876,
+                        "draw": 2.835462093,
+                        "someth": -1.815691233,
+                        "els": -1.517306089,
+                        "a": 4.651153564,
+                        "random": -4.050812244,
+                        "tiger": 8.403580666,
+                        "of": 1.039202571,
+                        "you": 0.145830095,
+                        "for": 0.145830095,
+                        "us": 0.145830095
+                      }
+                    }
+                  }
+                ],
+                "trainOpts": {
+                  "iterations": 20000,
+                  "errorThresh": 0.00005,
+                  "deltaErrorThresh": 0.000001,
+                  "learningRate": 0.8,
+                  "momentum": 0.5,
+                  "leakyReluAlpha": 0.06,
+                  "maxDecimals": 9
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "extraSentences": [
+      [
+        "en",
+        "can we have next one"
+      ],
+      [
+        "en",
+        "please change the picture"
+      ],
+      [
+        "en",
+        "I don't like this pic"
+      ],
+      [
+        "en",
+        "change the image"
+      ],
+      [
+        "en",
+        "move to next"
+      ],
+      [
+        "en",
+        "show another one"
+      ],
+      [
+        "en",
+        "Draw something else"
+      ],
+      [
+        "en",
+        "Draw a random picture"
+      ],
+      [
+        "en",
+        "Draw something random"
+      ],
+      [
+        "en",
+        "Draw a tiger"
+      ],
+      [
+        "en",
+        "can we have a drawing of tiger"
+      ],
+      [
+        "en",
+        "can you draw a tiger for us"
+      ]
+    ]
+  },
+  "nerManager": {
+    "settings": {},
+    "threshold": 0.8,
+    "builtins": [
+      "Number",
+      "Ordinal",
+      "Percentage",
+      "Age",
+      "Currency",
+      "Dimension",
+      "Temperature",
+      "DateTime",
+      "PhoneNumber",
+      "IpAddress",
+      "Boolean",
+      "Email",
+      "Hashtag",
+      "URL"
+    ],
+    "namedEntities": {}
+  },
+  "slotManager": {},
+  "responses": {
+    "en": {
+      "action.draw": [
+        {
+          "response": "Draw"
+        }
+      ],
+      "action.next": [
+        {
+          "response": "Next"
+        }
+      ],
+      "action.random": [
+        {
+          "response": "Random"
+        }
+      ]
+    }
+  },
+  "actions": {}
+}

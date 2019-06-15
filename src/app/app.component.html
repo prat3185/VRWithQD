@@ -6,12 +6,9 @@
 <div>
     <canvas #canvas></canvas>
 </div>
-<p>RxCompoent.message: {{message}}</p>
+<p>Message: {{message}}</p>
 <button
   [disabled]="service.started$ | async"
   (click)="listen()"
->listen</button>
-<p>lang: ja</p>
-<p>grammars: none</p>
-
+>Listen
 <router-outlet></router-outlet>
