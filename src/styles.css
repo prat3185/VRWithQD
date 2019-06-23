@@ -4,11 +4,13 @@ html{
 }
 body{
     height: 100%;
+    background-color:#fff;
 }
 
 #objectContainer {
     display: inline-grid;
     grid-template-columns: auto auto auto;
+    background-color: #fff;
 }
 
 #strip{
@@ -17,4 +19,21 @@ body{
     background-size: 100% 10px;
     height: 10px;
     width: 100%;
+}
+
+.effect-17 input, .effect-17 select{
+    border: 0px solid black;
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin-top: -5px;
+}
+
+.effect-17 input:focus, .effect-17 select:focus {
+    outline: none;
+}
+
+.effect-17 label{
+    color: #0000007a;
+    font-size: 0.9rem;
+    font-weight: bold;
 }

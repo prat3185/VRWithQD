@@ -4,8 +4,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RxSpeechRecognitionService, resultList } from '@kamiazya/ngx-speech-recognition';
 import { DoodleDrawServiceService } from 'src/Services/doodle-draw-service.service';
 import { SpeechService } from 'src/Services/speech.service';
-import { identifierModuleUrl } from '@angular/compiler';
 import { Connectors } from '../models/connector.model';
+import * as jsPDF from 'jspdf';
 
 declare var nlp:any;
 
@@ -15,14 +15,19 @@ declare var nlp:any;
   styleUrls: ['./flow-chart.component.css']
 })
 export class FlowChartComponent implements OnInit {
-  @ViewChild('closeCreateObjectModal') closeCreateObjectModal: ElementRef;
   title = 'flow-chart';
   objects: Object[] = [];
   objectForm: FormGroup;
   name: FormControl;
   shape: FormControl;
-  speechErrorMessage:string='No speech found. We are stopping the service';
   content: FormControl;
+  top: FormControl;
+  right: FormControl;
+  bottom: FormControl;
+  left: FormControl;
+
+  speechErrorMessage:string='No speech found. We are stopping the service';
+  
   connectors:Connectors[]=[];
   connectArray:string[]=["connect","connector","join","connects","connected","line"];
   contentArray:string[]=["content","text","write","contents","information","name","value"];
@@ -54,13 +59,21 @@ export class FlowChartComponent implements OnInit {
     this.name = new FormControl('', Validators.required);
     this.shape = new FormControl('', Validators.required);
     this.content = new FormControl('', Validators.required);
+    this.top = new FormControl(0, Validators.required);
+    this.right = new FormControl(0, Validators.required);
+    this.bottom = new FormControl(0, Validators.required);
+    this.left = new FormControl(0, Validators.required);
   }
 
   createForm(){
     this.objectForm = new FormGroup({
       'name': this.name,
       'shape': this.shape,
-      'content': this.content
+      'content': this.content,
+      'top': this.top,
+      'right': this.right,
+      'bottom': this.bottom,
+      'left': this.left
     });
   }
 
@@ -80,33 +93,56 @@ export class FlowChartComponent implements OnInit {
     if(this.objectForm.valid){
       let temp: Object;
 
-      let height = parseInt(this.objects[this.objects.length - 1].height.slice(0, this.objects[this.objects.length - 1].height.length - 2));
-      let width = parseInt(this.objects[this.objects.length - 1].width.slice(0, this.objects[this.objects.length - 1].width.length - 2));
       
-      let top = parseInt(this.objects[this.objects.length - 1].top.slice(0, this.objects[this.objects.length - 1].top.length - 2));
-      top = top + height + 40;
+      let containerWidth: number = document.getElementById('objectContainer').offsetWidth/20;
+      let containerHeight: number = document.getElementById('objectContainer').offsetHeight/10;
+
+      // let height = parseInt(this.objects[this.objects.length - 1].height.slice(0, this.objects[this.objects.length - 1].height.length - 2));
+      // let width = parseInt(this.objects[this.objects.length - 1].width.slice(0, this.objects[this.objects.length - 1].width.length - 2));
+      
+      // let top = parseInt(this.objects[this.objects.length - 1].top.slice(0, this.objects[this.objects.length - 1].top.length - 2));
+      // top = top + height + 40;
         
       
-      let left = parseInt(this.objects[this.objects.length - 1].left.slice(0, this.objects[this.objects.length - 1].left.length - 2));
+      // let left = parseInt(this.objects[this.objects.length - 1].left.slice(0, this.objects[this.objects.length - 1].left.length - 2));
 
       temp = {
         'name': this.objectForm.get('name').value,
         'shape': this.objectForm.get('shape').value,
         'content': this.objectForm.get('content').value,
-        'top': top.toString()+'px',
-        'left': left.toString()+'px',
-        'right': '0px',
-        'bottom': '0px',
-        'height': height.toString()+'px',
-        'width': width.toString()+'px',
+        'top': (this.objectForm.get('top').value*containerHeight).toString() + 'px',
+        'left': (this.objectForm.get('left').value*containerWidth).toString() + 'px',
+        'right': (this.objectForm.get('right').value*containerWidth).toString() + 'px',
+        'bottom': (this.objectForm.get('bottom').value*containerHeight).toString() + 'px',
+        'height': '60'+'px',
+        'width': '90'+'px',
         'imgPath': this.getObjectImagepath(this.objectForm.get('shape').value),
         'id': this.objects.length
       };
 
       this.objects.push(temp);
-      this.closeCreateObjectModal.nativeElement.click();
       this.objectForm.reset();
+      this.top.setValue(0); 
+      this.bottom.setValue(0); 
+      this.left.setValue(0); 
+      this.right.setValue(0);
     }
+  }
+
+  resetForm(){
+    this.objectForm.reset();
+    this.top.setValue(0); 
+    this.bottom.setValue(0); 
+    this.left.setValue(0); 
+    this.right.setValue(0);
+  }
+
+  convertToPDF(){
+    let doc = new jsPDF('p', 'pt', 'a4');
+    const content = document.getElementById('objectContainer');
+    doc.addHTML(content, () => {
+      doc.save('content.pdf');
+    });
   }
 
   getNouns(speech:string){
@@ -205,44 +241,42 @@ export class FlowChartComponent implements OnInit {
     );
   }
 
-
-
-confirmDraw(objectToDraw){
-console.log("confrim draw called");
-this.speechService.record().subscribe(
-  (value) => {
-    console.log("confirmation value:"+value);
-    if(value.toLowerCase().indexOf("yes")!=-1){
-    let status="Ok here is a "+objectToDraw+ " for you";
-    this.drawService.textToSpeech(status);
-    this.insertObject(objectToDraw, this.positions, this.units);
-    this.stop();
-    }
-    else if(value.toLocaleLowerCase().indexOf("no")!=-1){
-      let message="Ok discarding the statement";
-      this.drawService.textToSpeech(message);
-      this.stop();
-    }
-    else{
-      setTimeout(()=>{
-        let message="Didn't get proper response.Discarding the changes";
-        this.drawService.textToSpeech(message);
+  confirmDraw(objectToDraw){
+    console.log("confrim draw called");
+    this.speechService.record().subscribe(
+      (value) => {
+        console.log("confirmation value:"+value);
+        if(value.toLowerCase().indexOf("yes")!=-1){
+        let status="Ok here is a "+objectToDraw+ " for you";
+        this.drawService.textToSpeech(status);
+        this.insertObject(objectToDraw, this.positions, this.units);
         this.stop();
-      },5000)
-    }
-  },
-  (err) => {
-    if(err.error == "no-speech"){
-      this.drawService.textToSpeech(this.speechErrorMessage);
-      this.stop();
-      //setTimeout(this.confirmDraw,3000);
-    }
-  },
-  () => {
-    this.stop();
+        }
+        else if(value.toLocaleLowerCase().indexOf("no")!=-1){
+          let message="Ok discarding the statement";
+          this.drawService.textToSpeech(message);
+          this.stop();
+        }
+        else{
+          setTimeout(()=>{
+            let message="Didn't get proper response.Discarding the changes";
+            this.drawService.textToSpeech(message);
+            this.stop();
+          },5000)
+        }
+      },
+      (err) => {
+        if(err.error == "no-speech"){
+          this.drawService.textToSpeech(this.speechErrorMessage);
+          this.stop();
+          //setTimeout(this.confirmDraw,3000);
+        }
+      },
+      () => {
+        this.stop();
+      }
+    );
   }
-);
-}
 
 
   insertObject(shape: string, positions: string[], units: number[]){

@@ -1,10 +1,11 @@
 <div style="margin-top: -15px; margin-bottom: 5px;"> 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createObject"> Create Object </button>
   <button [disabled]="service.started$ | async" (click)="listen()"> Listen </button>
+  <button type="button" class="btn btn-default" (click)="convertToPDF()">Conver to PDF</button>
 </div>
 
-<div id="objectContainer" style=" margin-left: 1%; width: 98%; height: 98%; border: 1px solid black; position: relative;">
-  <svg *ngFor="let item of connectors" width="500" height="500" style="position: absolute">
+<div id="objectContainer" class="col-xs-12 col-md-8" 
+  style="height: 98%; border: 1px solid black; position: relative; padding: 0px;">
+  <svg *ngFor="let item of connectors" width="500" height="500" style="position: absolute; z-index: 1;">
       <defs>
           <marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6"
                   orient="auto">
@@ -19,84 +20,100 @@
         </defs>
     <line [attr.x1]="item.x1" [attr.y1]="item.y1" [attr.x2]="item.x2" [attr.y2]="item.y2" [ngClass]="{biarrow:item.connectorType,arrow:item.connectorType==false}" stroke="black"/></svg>
   <div>
-    <span style ="position: absolute; top: 0px; left: 0%; border: 1px solid black;" id="top1"></span>
-    <span style ="position: absolute; top: 0px; left: 5%; border: 1px solid black;" id="top2"></span>
-    <span style ="position: absolute; top: 0px; left: 10%; border: 1px solid black;" id="top3"></span>
-    <span style ="position: absolute; top: 0px; left: 15%; border: 1px solid black;" id="top4"></span>
-    <span style ="position: absolute; top: 0px; left: 20%; border: 1px solid black;" id="top5"></span>
-    <span style ="position: absolute; top: 0px; left: 25%; border: 1px solid black;" id="top6"></span>
-    <span style ="position: absolute; top: 0px; left: 30%; border: 1px solid black;" id="top7"></span>
-    <span style ="position: absolute; top: 0px; left: 35%; border: 1px solid black;" id="top8"></span>
-    <span style ="position: absolute; top: 0px; left: 40%; border: 1px solid black;" id="top9"></span>
-    <span style ="position: absolute; top: 0px; left: 45%; border: 1px solid black;" id="top10"></span>
-    <span style ="position: absolute; top: 0px; left: 50%; border: 1px solid black;" id="top11"></span>
-    <span style ="position: absolute; top: 0px; left: 55%; border: 1px solid black;" id="top12"></span>
-    <span style ="position: absolute; top: 0px; left: 60%; border: 1px solid black;" id="top13"></span>
-    <span style ="position: absolute; top: 0px; left: 65%; border: 1px solid black;" id="top14"></span>
-    <span style ="position: absolute; top: 0px; left: 70%; border: 1px solid black;" id="top15"></span>
-    <span style ="position: absolute; top: 0px; left: 75%; border: 1px solid black;" id="top16"></span>
-    <span style ="position: absolute; top: 0px; left: 80%; border: 1px solid black;" id="top17"></span>
-    <span style ="position: absolute; top: 0px; left: 85%; border: 1px solid black;" id="top18"></span>
-    <span style ="position: absolute; top: 0px; left: 90%; border: 1px solid black;" id="top19"></span>
-    <span style ="position: absolute; top: 0px; left: 95%; border: 1px solid black;" id="top20"></span>
+    <span style ="position: absolute; top: 0px; left: 0%; border: 2px solid black;" id="top1"></span>
+    <span style ="position: absolute; top: 0px; left: 5%; border: 2px solid black;" id="top2"></span>
+    <span style ="position: absolute; top: 0px; left: 10%; border: 2px solid black;" id="top3"></span>
+    <span style ="position: absolute; top: 0px; left: 15%; border: 2px solid black;" id="top4"></span>
+    <span style ="position: absolute; top: 0px; left: 20%; border: 2px solid black;" id="top5"></span>
+    <span style ="position: absolute; top: 0px; left: 25%; border: 2px solid black;" id="top6"></span>
+    <span style ="position: absolute; top: 0px; left: 30%; border: 2px solid black;" id="top7"></span>
+    <span style ="position: absolute; top: 0px; left: 35%; border: 2px solid black;" id="top8"></span>
+    <span style ="position: absolute; top: 0px; left: 40%; border: 2px solid black;" id="top9"></span>
+    <span style ="position: absolute; top: 0px; left: 45%; border: 2px solid black;" id="top10"></span>
+    <span style ="position: absolute; top: 0px; left: 50%; border: 2px solid black;" id="top11"></span>
+    <span style ="position: absolute; top: 0px; left: 55%; border: 2px solid black;" id="top12"></span>
+    <span style ="position: absolute; top: 0px; left: 60%; border: 2px solid black;" id="top13"></span>
+    <span style ="position: absolute; top: 0px; left: 65%; border: 2px solid black;" id="top14"></span>
+    <span style ="position: absolute; top: 0px; left: 70%; border: 2px solid black;" id="top15"></span>
+    <span style ="position: absolute; top: 0px; left: 75%; border: 2px solid black;" id="top16"></span>
+    <span style ="position: absolute; top: 0px; left: 80%; border: 2px solid black;" id="top17"></span>
+    <span style ="position: absolute; top: 0px; left: 85%; border: 2px solid black;" id="top18"></span>
+    <span style ="position: absolute; top: 0px; left: 90%; border: 2px solid black;" id="top19"></span>
+    <span style ="position: absolute; top: 0px; left: 95%; border: 2px solid black;" id="top20"></span>
   </div>
   <div>
-    <span style ="position: absolute; top: 0%; left: 0px; border: 1px solid black;" id="left1"></span>
-    <span style ="position: absolute; top: 10%; left: 0px; border: 1px solid black;" id="left2"></span>
-    <span style ="position: absolute; top: 20%; left: 0px; border: 1px solid black;" id="left3"></span>
-    <span style ="position: absolute; top: 30%; left: 0px; border: 1px solid black;" id="left4"></span>
-    <span style ="position: absolute; top: 40%; left: 0px; border: 1px solid black;" id="left5"></span>
-    <span style ="position: absolute; top: 50%; left: 0px; border: 1px solid black;" id="left6"></span>
-    <span style ="position: absolute; top: 60%; left: 0px; border: 1px solid black;" id="left7"></span>
-    <span style ="position: absolute; top: 70%; left: 0px; border: 1px solid black;" id="left8"></span>
-    <span style ="position: absolute; top: 80%; left: 0px; border: 1px solid black;" id="left9"></span>
-    <span style ="position: absolute; top: 90%; left: 0px; border: 1px solid black;" id="left10"></span>
+    <span style ="position: absolute; top: 0%; left: 0px; border: 2px solid black;" id="left1"></span>
+    <span style ="position: absolute; top: 10%; left: 0px; border: 2px solid black;" id="left2"></span>
+    <span style ="position: absolute; top: 20%; left: 0px; border: 2px solid black;" id="left3"></span>
+    <span style ="position: absolute; top: 30%; left: 0px; border: 2px solid black;" id="left4"></span>
+    <span style ="position: absolute; top: 40%; left: 0px; border: 2px solid black;" id="left5"></span>
+    <span style ="position: absolute; top: 50%; left: 0px; border: 2px solid black;" id="left6"></span>
+    <span style ="position: absolute; top: 60%; left: 0px; border: 2px solid black;" id="left7"></span>
+    <span style ="position: absolute; top: 70%; left: 0px; border: 2px solid black;" id="left8"></span>
+    <span style ="position: absolute; top: 80%; left: 0px; border: 2px solid black;" id="left9"></span>
+    <span style ="position: absolute; top: 90%; left: 0px; border: 2px solid black;" id="left10"></span>
   </div>
 
   <div *ngFor="let item of objects" [ngStyle]="{'position': 'absolute', 'top': item.top, 'left': item.left,
                                               'bottom': item.bottom, 'right': item.right,
                                               'width': item.width, 'height': item.height}">
-    <img src={{item.imgPath}} [ngStyle]="{'position': 'absolute', 
+    <img src={{item.imgPath}} [ngStyle]="{'position': 'absolute', 'z-index': '0',
                                           'width': item.width, 'height': item.height}">
     <span [ngStyle]="{'position': 'relative', 'top': '25px', 'left': '10px', 'text-align': 'center'}">{{ item.content }}</span>
   </div>
 </div>
 
-<div id="createObject" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Create Object</h4>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="objectForm">
-          <div class="col-xs-12">
-            <input class="form-control" type="text" placeholder="name" formControlName="name">
-          </div>
-          <br><br>
-          <div class="col-xs-12">
-            <select class="form-control" placeholder="Shape" formControlName="shape">
-              <option value="oval"> Oval </option>
-              <option value="rectangle"> Rectangle </option>
-              <option value="rhombus"> Rhombus </option>
-            </select>
-          </div>
-          <br><br>
-          <div class="col-xs-12">
-            <input class="form-control" type="text" placeholder="Content" formControlName="content">
-          </div>
-          <br><br>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" #closeCreateObjectModal>Close</button>
-        <button type="button" class="btn btn-success" (click)="createObject()">Save</button>
-      </div>
+<div class="col-xs-6 col-md-4">
+  <h3 style="margin-top: 0px;">Create Object</h3>
+  <form [formGroup]="objectForm">
+    <div class="col-xs-12 effect-17">
+      <label> Name </label>
+      <input type="text" formControlName="name">
     </div>
-
-  </div>
+    <br><br>
+    <div class="col-xs-12 effect-17">
+      <label> Select Object </label>
+      <select formControlName="shape">
+        
+        <option value="oval"> Oval </option>
+        <option value="rectangle"> Rectangle </option>
+        <option value="rhombus"> Rhombus </option>
+      </select>
+    </div>
+    <br><br>
+    <div class="col-xs-12 effect-17">
+      <label> Content </label>
+      <input type="text" formControlName="content">
+    </div>
+    <br><br>
+    <div class="col-xs-12 effect-17">
+      <label> Top </label>
+      <input type="number" placeholder="Top" formControlName="top">
+      
+    </div>
+    <br><br>
+    <div class="col-xs-12 effect-17">
+      <label> Left </label>
+      <input class="effect-17" type="number" placeholder="Left" formControlName="left">
+      
+    </div>
+    <br><br>
+    <div class="col-xs-12 effect-17">
+      <label> Bottom </label>
+      <input class="effect-17" type="number" placeholder="Bottom" formControlName="bottom">
+      
+    </div>
+    <br><br>
+    <div class="col-xs-12 effect-17">
+      <label> Right </label>
+      <input class="effect-17" type="number" placeholder="Right" formControlName="right">
+      
+    </div>
+    <br><br><br><br>
+    <div class="pull-right" style="margin-right: 16px;">
+      <button type="button" class="btn btn-default" style="margin-right: 5px;" (click)="resetForm()">Cancel</button>
+      <button type="button" class="btn btn-success" (click)="createObject()" [disabled]="!this.objectForm.valid">Save</button>
+    </div>
+  </form>
 </div>
 

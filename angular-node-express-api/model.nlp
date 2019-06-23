@@ -33,71 +33,90 @@
         "trainByDomain": true,
         "keepStopwords": true,
         "stemDict": {
-          "can,have,next,one,we": {
-            "domain": "default",
-            "intent": "action.next"
-          },
-          "chang,pictur,pleas,the": {
-            "domain": "default",
-            "intent": "action.next"
-          },
-          "do,i,like,not,pic,this": {
-            "domain": "default",
-            "intent": "action.next"
-          },
-          "chang,imag,the": {
-            "domain": "default",
-            "intent": "action.next"
-          },
-          "move,next,to": {
-            "domain": "default",
-            "intent": "action.next"
-          },
-          "anoth,one,show": {
-            "domain": "default",
-            "intent": "action.next"
-          },
-          "draw,els,someth": {
-            "domain": "default",
-            "intent": "action.random"
-          },
-          "a,draw,pictur,random": {
-            "domain": "default",
-            "intent": "action.random"
-          },
-          "random,someth": {
-            "domain": "default",
-            "intent": "action.random"
-          },
-          "a,draw,tiger": {
+          "10,a,and,can,from,have,left,one,rectangl,seven,top,unit,unit,we": {
             "domain": "default",
             "intent": "action.draw"
           },
-          "a,can,draw,have,of,tiger,we": {
+          "10,5,a,and,bottom,draw,from,from,oval,right,unit,unit": {
             "domain": "default",
             "intent": "action.draw"
           },
-          "a,can,draw,for,tiger,us,you": {
+          "10,a,and,draw,five,from,from,left,oval,top,unit,unit": {
             "domain": "default",
             "intent": "action.draw"
           },
-          "draw,pictur": {
+          "10,5,a,and,bottom,draw,from,from,left,oval,unit,unit": {
             "domain": "default",
             "intent": "action.draw"
           },
-          "a,draw,pictur": {
+          "10,a,draw,from,oval,top,unit": {
             "domain": "default",
             "intent": "action.draw"
           },
-          "a,dcan,for,get,imag,of,tiger,us,you": {
+          "10,a,bottom,draw,from,rectangl,unit": {
             "domain": "default",
             "intent": "action.draw"
+          },
+          "10,a,draw,from,right,squar,unit": {
+            "domain": "default",
+            "intent": "action.draw"
+          },
+          "10,a,draw,from,left,oval,unit": {
+            "domain": "default",
+            "intent": "action.draw"
+          },
+          "10,a,below,draw,last,object,oval,the,unit": {
+            "domain": "default",
+            "intent": "action.relative"
+          },
+          "10,a,below,draw,first,object,rectangl,the,unit": {
+            "domain": "default",
+            "intent": "action.relative"
+          },
+          "a,draw,object,oval,previous,ten,the,under,unit": {
+            "domain": "default",
+            "intent": "action.relative"
+          },
+          "10,a,below,circl,draw,last,object,the,unit": {
+            "domain": "default",
+            "intent": "action.relative"
+          },
+          "a,draw,object,of,on,oval,seven,the,third,top,unit": {
+            "domain": "default",
+            "intent": "action.relative"
+          },
+          "10,a,abov,draw,object,oval,previous,the,unit": {
+            "domain": "default",
+            "intent": "action.relative"
+          },
+          "a,below,draw,five,last,object,rectangl,the,unit": {
+            "domain": "default",
+            "intent": "action.relative"
+          },
+          "10,a,draw,last,object,of,on,oval,right,the,the,unit": {
+            "domain": "default",
+            "intent": "action.relative"
+          },
+          "10,a,draw,left,object,of,on,oval,previous,the,the,unit": {
+            "domain": "default",
+            "intent": "action.relative"
+          },
+          "a,draw,last,object,of,on,oval,right,ten,the,the,unit": {
+            "domain": "default",
+            "intent": "action.relative"
+          },
+          "10,a,draw,object,of,on,oval,right,the,the,third,unit": {
+            "domain": "default",
+            "intent": "action.relative"
+          },
+          "10,a,draw,left,object,of,on,oval,second,the,the,unit": {
+            "domain": "default",
+            "intent": "action.relative"
           }
         },
         "intentDict": {
-          "action.next": "default",
-          "action.random": "default",
-          "action.draw": "default"
+          "action.draw": "default",
+          "action.relative": "default"
         },
         "useStemDict": true,
         "domains": {
@@ -126,87 +145,32 @@
                   "can",
                   "we",
                   "have",
-                  "next",
+                  "a",
+                  "rectangl",
+                  "from",
+                  "top",
+                  "10",
+                  "unit",
+                  "and",
+                  "left",
+                  "seven",
+                  "unit",
                   "one"
                 ],
                 "tokens": [
                   "can",
                   "we",
                   "have",
-                  "next",
-                  "one"
-                ]
-              },
-              {
-                "intent": "default",
-                "utterance": [
-                  "pleas",
-                  "chang",
-                  "the",
-                  "pictur"
-                ],
-                "tokens": [
-                  "pleas",
-                  "chang",
-                  "the",
-                  "pictur"
-                ]
-              },
-              {
-                "intent": "default",
-                "utterance": [
-                  "i",
-                  "do",
-                  "not",
-                  "like",
-                  "this",
-                  "pic"
-                ],
-                "tokens": [
-                  "i",
-                  "do",
-                  "not",
-                  "like",
-                  "this",
-                  "pic"
-                ]
-              },
-              {
-                "intent": "default",
-                "utterance": [
-                  "chang",
-                  "the",
-                  "imag"
-                ],
-                "tokens": [
-                  "chang",
-                  "the",
-                  "imag"
-                ]
-              },
-              {
-                "intent": "default",
-                "utterance": [
-                  "move",
-                  "to",
-                  "next"
-                ],
-                "tokens": [
-                  "move",
-                  "to",
-                  "next"
-                ]
-              },
-              {
-                "intent": "default",
-                "utterance": [
-                  "show",
-                  "anoth",
-                  "one"
-                ],
-                "tokens": [
-                  "show",
-                  "anoth",
+                  "a",
+                  "rectangl",
+                  "from",
+                  "top",
+                  "10",
+                  "unit",
+                  "and",
+                  "left",
+                  "seven",
+                  "unit",
                   "one"
                 ]
               },
@@ -214,13 +178,31 @@
                 "intent": "default",
                 "utterance": [
                   "draw",
-                  "someth",
-                  "els"
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "right",
+                  "and",
+                  "5",
+                  "unit",
+                  "from",
+                  "bottom"
                 ],
                 "tokens": [
                   "draw",
-                  "someth",
-                  "els"
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "right",
+                  "and",
+                  "5",
+                  "unit",
+                  "from",
+                  "bottom"
                 ]
               },
               {
@@ -228,25 +210,61 @@
                 "utterance": [
                   "draw",
                   "a",
-                  "random",
-                  "pictur"
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left",
+                  "and",
+                  "five",
+                  "unit",
+                  "from",
+                  "top"
                 ],
                 "tokens": [
                   "draw",
                   "a",
-                  "random",
-                  "pictur"
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left",
+                  "and",
+                  "five",
+                  "unit",
+                  "from",
+                  "top"
                 ]
               },
               {
                 "intent": "default",
                 "utterance": [
-                  "someth",
-                  "random"
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left",
+                  "and",
+                  "5",
+                  "unit",
+                  "from",
+                  "bottom"
                 ],
                 "tokens": [
-                  "someth",
-                  "random"
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left",
+                  "and",
+                  "5",
+                  "unit",
+                  "from",
+                  "bottom"
                 ]
               },
               {
@@ -254,65 +272,212 @@
                 "utterance": [
                   "draw",
                   "a",
-                  "tiger"
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "top"
                 ],
                 "tokens": [
                   "draw",
                   "a",
-                  "tiger"
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "top"
                 ]
               },
               {
                 "intent": "default",
                 "utterance": [
-                  "can",
-                  "we",
-                  "have",
-                  "a",
                   "draw",
+                  "a",
+                  "rectangl",
+                  "10",
+                  "unit",
+                  "from",
+                  "bottom"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "rectangl",
+                  "10",
+                  "unit",
+                  "from",
+                  "bottom"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "squar",
+                  "10",
+                  "unit",
+                  "from",
+                  "right"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "squar",
+                  "10",
+                  "unit",
+                  "from",
+                  "right"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "rectangl",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "first",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "rectangl",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "first",
+                  "object"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "ten",
+                  "unit",
+                  "under",
+                  "the",
+                  "previous",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "ten",
+                  "unit",
+                  "under",
+                  "the",
+                  "previous",
+                  "object"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "circl",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "circl",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "seven",
+                  "unit",
+                  "on",
+                  "top",
                   "of",
-                  "tiger"
+                  "the",
+                  "third",
+                  "object"
                 ],
                 "tokens": [
-                  "can",
-                  "we",
-                  "have",
-                  "a",
                   "draw",
+                  "a",
+                  "oval",
+                  "seven",
+                  "unit",
+                  "on",
+                  "top",
                   "of",
-                  "tiger"
-                ]
-              },
-              {
-                "intent": "default",
-                "utterance": [
-                  "can",
-                  "you",
-                  "draw",
-                  "a",
-                  "tiger",
-                  "for",
-                  "us"
-                ],
-                "tokens": [
-                  "can",
-                  "you",
-                  "draw",
-                  "a",
-                  "tiger",
-                  "for",
-                  "us"
-                ]
-              },
-              {
-                "intent": "default",
-                "utterance": [
-                  "draw",
-                  "pictur"
-                ],
-                "tokens": [
-                  "draw",
-                  "pictur"
+                  "the",
+                  "third",
+                  "object"
                 ]
               },
               {
@@ -320,73 +485,242 @@
                 "utterance": [
                   "draw",
                   "a",
-                  "pictur"
+                  "oval",
+                  "10",
+                  "unit",
+                  "abov",
+                  "the",
+                  "previous",
+                  "object"
                 ],
                 "tokens": [
                   "draw",
                   "a",
-                  "pictur"
+                  "oval",
+                  "10",
+                  "unit",
+                  "abov",
+                  "the",
+                  "previous",
+                  "object"
                 ]
               },
               {
                 "intent": "default",
                 "utterance": [
-                  "dcan",
-                  "you",
-                  "get",
+                  "draw",
                   "a",
-                  "imag",
+                  "rectangl",
+                  "five",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "rectangl",
+                  "five",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
                   "of",
-                  "tiger",
-                  "for",
-                  "us"
+                  "the",
+                  "last",
+                  "object"
                 ],
                 "tokens": [
-                  "dcan",
-                  "you",
-                  "get",
+                  "draw",
                   "a",
-                  "imag",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
                   "of",
-                  "tiger",
-                  "for",
-                  "us"
+                  "the",
+                  "last",
+                  "object"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "left",
+                  "of",
+                  "the",
+                  "previous",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "left",
+                  "of",
+                  "the",
+                  "previous",
+                  "object"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "ten",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
+                  "of",
+                  "the",
+                  "last",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "ten",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
+                  "of",
+                  "the",
+                  "last",
+                  "object"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
+                  "of",
+                  "the",
+                  "third",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
+                  "of",
+                  "the",
+                  "third",
+                  "object"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "left",
+                  "of",
+                  "the",
+                  "second",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "left",
+                  "of",
+                  "the",
+                  "second",
+                  "object"
                 ]
               }
             ],
             "features": {
-              "can": 3,
-              "we": 2,
-              "have": 2,
-              "next": 2,
-              "one": 2,
-              "pleas": 1,
-              "chang": 2,
-              "the": 2,
-              "pictur": 4,
-              "i": 1,
-              "do": 1,
-              "not": 1,
-              "like": 1,
-              "this": 1,
-              "pic": 1,
-              "imag": 2,
-              "move": 1,
-              "to": 1,
-              "show": 1,
-              "anoth": 1,
-              "draw": 7,
-              "someth": 2,
-              "els": 1,
-              "a": 6,
-              "random": 2,
-              "tiger": 4,
-              "of": 2,
-              "you": 2,
-              "for": 2,
-              "us": 2,
-              "dcan": 1,
-              "get": 1
+              "5": 2,
+              "10": 16,
+              "can": 1,
+              "we": 1,
+              "have": 1,
+              "a": 20,
+              "rectangl": 4,
+              "from": 11,
+              "top": 4,
+              "unit": 24,
+              "and": 4,
+              "left": 6,
+              "seven": 2,
+              "one": 1,
+              "draw": 19,
+              "oval": 14,
+              "right": 5,
+              "bottom": 3,
+              "five": 2,
+              "squar": 1,
+              "below": 4,
+              "the": 17,
+              "last": 5,
+              "object": 12,
+              "first": 1,
+              "ten": 2,
+              "under": 1,
+              "previous": 3,
+              "circl": 1,
+              "on": 6,
+              "of": 6,
+              "third": 2,
+              "abov": 1,
+              "second": 1
             },
             "isEditing": false,
             "className": "BrainNLU",
@@ -442,272 +776,587 @@
             "keepStopwords": true,
             "docs": [
               {
-                "intent": "action.next",
-                "utterance": [
-                  "can",
-                  "we",
-                  "have",
-                  "next",
-                  "one"
-                ],
-                "tokens": [
-                  "can",
-                  "we",
-                  "have",
-                  "next",
-                  "one"
-                ]
-              },
-              {
-                "intent": "action.next",
-                "utterance": [
-                  "pleas",
-                  "chang",
-                  "the",
-                  "pictur"
-                ],
-                "tokens": [
-                  "pleas",
-                  "chang",
-                  "the",
-                  "pictur"
-                ]
-              },
-              {
-                "intent": "action.next",
-                "utterance": [
-                  "i",
-                  "do",
-                  "not",
-                  "like",
-                  "this",
-                  "pic"
-                ],
-                "tokens": [
-                  "i",
-                  "do",
-                  "not",
-                  "like",
-                  "this",
-                  "pic"
-                ]
-              },
-              {
-                "intent": "action.next",
-                "utterance": [
-                  "chang",
-                  "the",
-                  "imag"
-                ],
-                "tokens": [
-                  "chang",
-                  "the",
-                  "imag"
-                ]
-              },
-              {
-                "intent": "action.next",
-                "utterance": [
-                  "move",
-                  "to",
-                  "next"
-                ],
-                "tokens": [
-                  "move",
-                  "to",
-                  "next"
-                ]
-              },
-              {
-                "intent": "action.next",
-                "utterance": [
-                  "show",
-                  "anoth",
-                  "one"
-                ],
-                "tokens": [
-                  "show",
-                  "anoth",
-                  "one"
-                ]
-              },
-              {
-                "intent": "action.random",
-                "utterance": [
-                  "draw",
-                  "someth",
-                  "els"
-                ],
-                "tokens": [
-                  "draw",
-                  "someth",
-                  "els"
-                ]
-              },
-              {
-                "intent": "action.random",
-                "utterance": [
-                  "draw",
-                  "a",
-                  "random",
-                  "pictur"
-                ],
-                "tokens": [
-                  "draw",
-                  "a",
-                  "random",
-                  "pictur"
-                ]
-              },
-              {
-                "intent": "action.random",
-                "utterance": [
-                  "someth",
-                  "random"
-                ],
-                "tokens": [
-                  "someth",
-                  "random"
-                ]
-              },
-              {
-                "intent": "action.draw",
-                "utterance": [
-                  "draw",
-                  "a",
-                  "tiger"
-                ],
-                "tokens": [
-                  "draw",
-                  "a",
-                  "tiger"
-                ]
-              },
-              {
                 "intent": "action.draw",
                 "utterance": [
                   "can",
                   "we",
                   "have",
                   "a",
-                  "draw",
-                  "of",
-                  "tiger"
+                  "rectangl",
+                  "from",
+                  "top",
+                  "10",
+                  "unit",
+                  "and",
+                  "left",
+                  "seven",
+                  "unit",
+                  "one"
                 ],
                 "tokens": [
                   "can",
                   "we",
                   "have",
                   "a",
+                  "rectangl",
+                  "from",
+                  "top",
+                  "10",
+                  "unit",
+                  "and",
+                  "left",
+                  "seven",
+                  "unit",
+                  "one"
+                ]
+              },
+              {
+                "intent": "action.draw",
+                "utterance": [
                   "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "right",
+                  "and",
+                  "5",
+                  "unit",
+                  "from",
+                  "bottom"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "right",
+                  "and",
+                  "5",
+                  "unit",
+                  "from",
+                  "bottom"
+                ]
+              },
+              {
+                "intent": "action.draw",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left",
+                  "and",
+                  "five",
+                  "unit",
+                  "from",
+                  "top"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left",
+                  "and",
+                  "five",
+                  "unit",
+                  "from",
+                  "top"
+                ]
+              },
+              {
+                "intent": "action.draw",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left",
+                  "and",
+                  "5",
+                  "unit",
+                  "from",
+                  "bottom"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left",
+                  "and",
+                  "5",
+                  "unit",
+                  "from",
+                  "bottom"
+                ]
+              },
+              {
+                "intent": "action.draw",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "top"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "top"
+                ]
+              },
+              {
+                "intent": "action.draw",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "rectangl",
+                  "10",
+                  "unit",
+                  "from",
+                  "bottom"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "rectangl",
+                  "10",
+                  "unit",
+                  "from",
+                  "bottom"
+                ]
+              },
+              {
+                "intent": "action.draw",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "squar",
+                  "10",
+                  "unit",
+                  "from",
+                  "right"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "squar",
+                  "10",
+                  "unit",
+                  "from",
+                  "right"
+                ]
+              },
+              {
+                "intent": "action.draw",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "from",
+                  "left"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "rectangl",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "first",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "rectangl",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "first",
+                  "object"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "ten",
+                  "unit",
+                  "under",
+                  "the",
+                  "previous",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "ten",
+                  "unit",
+                  "under",
+                  "the",
+                  "previous",
+                  "object"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "circl",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "circl",
+                  "10",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "seven",
+                  "unit",
+                  "on",
+                  "top",
                   "of",
-                  "tiger"
-                ]
-              },
-              {
-                "intent": "action.draw",
-                "utterance": [
-                  "can",
-                  "you",
-                  "draw",
-                  "a",
-                  "tiger",
-                  "for",
-                  "us"
-                ],
-                "tokens": [
-                  "can",
-                  "you",
-                  "draw",
-                  "a",
-                  "tiger",
-                  "for",
-                  "us"
-                ]
-              },
-              {
-                "intent": "action.draw",
-                "utterance": [
-                  "draw",
-                  "pictur"
-                ],
-                "tokens": [
-                  "draw",
-                  "pictur"
-                ]
-              },
-              {
-                "intent": "action.draw",
-                "utterance": [
-                  "draw",
-                  "a",
-                  "pictur"
+                  "the",
+                  "third",
+                  "object"
                 ],
                 "tokens": [
                   "draw",
                   "a",
-                  "pictur"
-                ]
-              },
-              {
-                "intent": "action.draw",
-                "utterance": [
-                  "dcan",
-                  "you",
-                  "get",
-                  "a",
-                  "imag",
+                  "oval",
+                  "seven",
+                  "unit",
+                  "on",
+                  "top",
                   "of",
-                  "tiger",
-                  "for",
-                  "us"
+                  "the",
+                  "third",
+                  "object"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "abov",
+                  "the",
+                  "previous",
+                  "object"
                 ],
                 "tokens": [
-                  "dcan",
-                  "you",
-                  "get",
+                  "draw",
                   "a",
-                  "imag",
+                  "oval",
+                  "10",
+                  "unit",
+                  "abov",
+                  "the",
+                  "previous",
+                  "object"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "rectangl",
+                  "five",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "rectangl",
+                  "five",
+                  "unit",
+                  "below",
+                  "the",
+                  "last",
+                  "object"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
                   "of",
-                  "tiger",
-                  "for",
-                  "us"
+                  "the",
+                  "last",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
+                  "of",
+                  "the",
+                  "last",
+                  "object"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "left",
+                  "of",
+                  "the",
+                  "previous",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "left",
+                  "of",
+                  "the",
+                  "previous",
+                  "object"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "ten",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
+                  "of",
+                  "the",
+                  "last",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "ten",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
+                  "of",
+                  "the",
+                  "last",
+                  "object"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
+                  "of",
+                  "the",
+                  "third",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "right",
+                  "of",
+                  "the",
+                  "third",
+                  "object"
+                ]
+              },
+              {
+                "intent": "action.relative",
+                "utterance": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "left",
+                  "of",
+                  "the",
+                  "second",
+                  "object"
+                ],
+                "tokens": [
+                  "draw",
+                  "a",
+                  "oval",
+                  "10",
+                  "unit",
+                  "on",
+                  "the",
+                  "left",
+                  "of",
+                  "the",
+                  "second",
+                  "object"
                 ]
               }
             ],
             "features": {
-              "can": 3,
-              "we": 2,
-              "have": 2,
-              "next": 2,
-              "one": 2,
-              "pleas": 1,
-              "chang": 2,
-              "the": 2,
-              "pictur": 4,
-              "i": 1,
-              "do": 1,
-              "not": 1,
-              "like": 1,
-              "this": 1,
-              "pic": 1,
-              "imag": 2,
-              "move": 1,
-              "to": 1,
-              "show": 1,
-              "anoth": 1,
-              "draw": 7,
-              "someth": 2,
-              "els": 1,
-              "a": 6,
-              "random": 2,
-              "tiger": 4,
-              "of": 2,
-              "you": 2,
-              "for": 2,
-              "us": 2,
-              "dcan": 1,
-              "get": 1
+              "5": 2,
+              "10": 16,
+              "can": 1,
+              "we": 1,
+              "have": 1,
+              "a": 20,
+              "rectangl": 4,
+              "from": 11,
+              "top": 4,
+              "unit": 24,
+              "and": 4,
+              "left": 6,
+              "seven": 2,
+              "one": 1,
+              "draw": 19,
+              "oval": 14,
+              "right": 5,
+              "bottom": 3,
+              "five": 2,
+              "squar": 1,
+              "below": 4,
+              "the": 17,
+              "last": 5,
+              "object": 12,
+              "first": 1,
+              "ten": 2,
+              "under": 1,
+              "previous": 3,
+              "circl": 1,
+              "on": 6,
+              "of": 6,
+              "third": 2,
+              "abov": 1,
+              "second": 1
             },
             "isEditing": false,
             "className": "BrainNLU",
@@ -731,154 +1380,123 @@
               "labels": [],
               "network": {
                 "sizes": [
-                  32,
-                  3
+                  34,
+                  2
                 ],
                 "layers": [
                   {
+                    "5": {},
+                    "10": {},
                     "can": {},
                     "we": {},
                     "have": {},
-                    "next": {},
-                    "one": {},
-                    "pleas": {},
-                    "chang": {},
-                    "the": {},
-                    "pictur": {},
-                    "i": {},
-                    "do": {},
-                    "not": {},
-                    "like": {},
-                    "this": {},
-                    "pic": {},
-                    "imag": {},
-                    "move": {},
-                    "to": {},
-                    "show": {},
-                    "anoth": {},
-                    "draw": {},
-                    "someth": {},
-                    "els": {},
                     "a": {},
-                    "random": {},
-                    "tiger": {},
+                    "rectangl": {},
+                    "from": {},
+                    "top": {},
+                    "unit": {},
+                    "and": {},
+                    "left": {},
+                    "seven": {},
+                    "one": {},
+                    "draw": {},
+                    "oval": {},
+                    "right": {},
+                    "bottom": {},
+                    "five": {},
+                    "squar": {},
+                    "below": {},
+                    "the": {},
+                    "last": {},
+                    "object": {},
+                    "first": {},
+                    "ten": {},
+                    "under": {},
+                    "previous": {},
+                    "circl": {},
+                    "on": {},
                     "of": {},
-                    "you": {},
-                    "for": {},
-                    "us": {},
-                    "dcan": {},
-                    "get": {}
+                    "third": {},
+                    "abov": {},
+                    "second": {}
                   },
                   {
-                    "action.next": {
-                      "bias": 4.582664967,
-                      "weights": {
-                        "can": 0.658404291,
-                        "we": 0.750748515,
-                        "have": 0.750748515,
-                        "next": 4.962049484,
-                        "one": 4.962050438,
-                        "pleas": 2.446937561,
-                        "chang": 4.970566273,
-                        "the": 4.970566273,
-                        "pictur": -0.30407083,
-                        "i": 2.013999939,
-                        "do": 2.013999939,
-                        "not": 2.013999939,
-                        "like": 2.013999939,
-                        "this": 2.013999939,
-                        "pic": 2.013999939,
-                        "imag": 2.142871618,
-                        "move": 3.560975075,
-                        "to": 3.560975075,
-                        "show": 3.560974598,
-                        "anoth": 3.560974598,
-                        "draw": -4.278591156,
-                        "someth": -2.25516057,
-                        "els": -0.572255611,
-                        "a": -2.214429379,
-                        "random": -2.329217196,
-                        "tiger": -1.336080909,
-                        "of": -1.031074286,
-                        "you": -0.47308591,
-                        "for": -0.47308591,
-                        "us": -0.47308591,
-                        "dcan": -0.380741745,
-                        "get": -0.380741745
-                      }
-                    },
-                    "action.random": {
-                      "bias": -2.320014,
-                      "weights": {
-                        "can": -1.027286053,
-                        "we": -0.564898908,
-                        "have": -0.564898908,
-                        "next": -0.404348463,
-                        "one": -0.399713248,
-                        "pleas": -0.418314546,
-                        "chang": -0.587365091,
-                        "the": -0.587365091,
-                        "pictur": -2.878069639,
-                        "i": -0.234612286,
-                        "do": -0.234612286,
-                        "not": -0.234612286,
-                        "like": -0.234612286,
-                        "this": -0.234612286,
-                        "pic": -0.234612286,
-                        "imag": -0.169050395,
-                        "move": -0.404348463,
-                        "to": -0.404348463,
-                        "show": -0.399713248,
-                        "anoth": -0.399713248,
-                        "draw": 4.555300236,
-                        "someth": 3.367775917,
-                        "els": 10.924611092,
-                        "a": 1.026181698,
-                        "random": 15.842523575,
-                        "tiger": -3.909553528,
-                        "of": -0.564898908,
-                        "you": -0.462387055,
-                        "for": -0.462387055,
-                        "us": -0.462387055,
-                        "dcan": 0,
-                        "get": 0
-                      }
-                    },
                     "action.draw": {
-                      "bias": 2.269114971,
+                      "bias": 0.895868957,
                       "weights": {
-                        "can": -1.489413261,
-                        "we": -0.459433228,
-                        "have": -0.459433228,
-                        "next": -1.654842496,
-                        "one": -1.654828072,
-                        "pleas": -2.677808046,
-                        "chang": -2.882672071,
-                        "the": -2.882672071,
-                        "pictur": 6.172438622,
-                        "i": -0.382584244,
-                        "do": -0.382584244,
-                        "not": -0.382584244,
-                        "like": -0.382584244,
-                        "this": -0.382584244,
-                        "pic": -0.382584244,
-                        "imag": 1.318402767,
-                        "move": -0.320192784,
-                        "to": -0.320192784,
-                        "show": -0.3201783,
-                        "anoth": -0.3201783,
-                        "draw": 8.254561424,
-                        "someth": -5.293057442,
-                        "els": -5.293057442,
-                        "a": -0.06466043,
-                        "random": -16.619232178,
-                        "tiger": 6.220628738,
-                        "of": 2.398483515,
-                        "you": 0.493287504,
-                        "for": 0.493287504,
-                        "us": 0.493287504,
-                        "dcan": 1.523266912,
-                        "get": 1.523266912
+                        "5": -0.153884962,
+                        "10": 2.81474328,
+                        "can": 0.219729513,
+                        "we": 0.219729513,
+                        "have": 0.219729513,
+                        "a": 1.791736722,
+                        "rectangl": 0.592882872,
+                        "from": 6.181271553,
+                        "top": 1.456842542,
+                        "unit": 1.791736722,
+                        "and": -0.645003855,
+                        "left": 1.256005645,
+                        "seven": -0.395168543,
+                        "one": 0.219729513,
+                        "draw": 1.572006464,
+                        "oval": 0.189830422,
+                        "right": 0.813471138,
+                        "bottom": 1.086804509,
+                        "five": -0.71084857,
+                        "squar": 1.009023309,
+                        "below": -2.591086149,
+                        "the": -4.389537811,
+                        "last": -1.778316736,
+                        "object": -4.389537811,
+                        "first": -0.867536247,
+                        "ten": -0.408109725,
+                        "under": -0.408109725,
+                        "previous": -0.915763021,
+                        "circl": 0,
+                        "on": -0.923146248,
+                        "of": -0.923146248,
+                        "third": -0.751675069,
+                        "abov": -0.467196375,
+                        "second": -0.076247655
+                      }
+                    },
+                    "action.relative": {
+                      "bias": 0.493073195,
+                      "weights": {
+                        "5": -1.026463389,
+                        "10": -0.284473687,
+                        "can": -0.901965261,
+                        "we": -0.901965261,
+                        "have": -0.901965261,
+                        "a": 0.977379322,
+                        "rectangl": 0.183934748,
+                        "from": -3.910283804,
+                        "top": -1.396304488,
+                        "unit": 0.977379322,
+                        "and": -2.321357727,
+                        "left": -1.236154199,
+                        "seven": 0.063561454,
+                        "one": -0.901965261,
+                        "draw": 1.879345417,
+                        "oval": 0.390524834,
+                        "right": -0.960416019,
+                        "bottom": -1.347686172,
+                        "five": 0.024643397,
+                        "squar": -0.05762073,
+                        "below": 1.531688333,
+                        "the": 4.887665272,
+                        "last": 0.781820118,
+                        "object": 4.887665272,
+                        "first": 0.989549637,
+                        "ten": -0.12124528,
+                        "under": 0.842609584,
+                        "previous": 1.215312839,
+                        "circl": 0.460541755,
+                        "on": 1.291078687,
+                        "of": 1.291078687,
+                        "third": 0.849512458,
+                        "abov": 1.22228694,
+                        "second": 1.051467776
                       }
                     }
                   }
@@ -901,63 +1519,83 @@
     "extraSentences": [
       [
         "en",
-        "can we have next one"
+        "can we have a rectangle from top 10 units and left seven units one"
       ],
       [
         "en",
-        "please change the picture"
+        "Draw a oval  10 units from right and 5 units from bottom"
       ],
       [
         "en",
-        "I don't like this pic"
+        "Draw a oval  10 units from left and five units from top"
       ],
       [
         "en",
-        "change the image"
+        "Draw a oval  10 units from left and 5 units from bottom"
       ],
       [
         "en",
-        "move to next"
+        "Draw a oval  10 units from top"
       ],
       [
         "en",
-        "show another one"
+        "Draw a rectangle  10 units from bottom"
       ],
       [
         "en",
-        "Draw something else"
+        "Draw a square  10 units from right"
       ],
       [
         "en",
-        "Draw a random picture"
+        "Draw a oval 10 units from left"
       ],
       [
         "en",
-        "something random"
+        "Draw a oval 10 units below the last object"
       ],
       [
         "en",
-        "Draw a tiger"
+        "Draw a rectangle 10 units below the first object"
       ],
       [
         "en",
-        "can we have a drawing of tiger"
+        "Draw a oval ten units under the previous object"
       ],
       [
         "en",
-        "can you draw a tiger for us"
+        "Draw a circle 10 units below the last object"
       ],
       [
         "en",
-        "draw picture"
+        "Draw a oval seven units on top of the third object"
       ],
       [
         "en",
-        "draw a picture"
+        "Draw a oval 10 units above the previous object"
       ],
       [
         "en",
-        "dcan you get a image of tiger for us"
+        "Draw a rectangle five units below the last object"
+      ],
+      [
+        "en",
+        "Draw a oval 10 units on the right of the last object"
+      ],
+      [
+        "en",
+        "Draw a oval 10 units on the left of the previous object"
+      ],
+      [
+        "en",
+        "Draw a oval ten units on the right of the last object"
+      ],
+      [
+        "en",
+        "Draw a oval  10 units on the right of the third object"
+      ],
+      [
+        "en",
+        "Draw a oval  10 units on the left of the second object"
       ]
     ]
   },
@@ -990,14 +1628,9 @@
           "response": "Draw"
         }
       ],
-      "action.next": [
+      "action.relative": [
         {
-          "response": "Next"
-        }
-      ],
-      "action.random": [
-        {
-          "response": "Random"
+          "response": "Relative"
         }
       ]
     }
