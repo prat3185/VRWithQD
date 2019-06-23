@@ -15,10 +15,13 @@ manager.addDocument('en', 'move to next', 'action.next');
 manager.addDocument('en', 'show another one', 'action.next');
 manager.addDocument('en', 'Draw something else', 'action.random');
 manager.addDocument('en', 'Draw a random picture', 'action.random');
-manager.addDocument('en', 'Draw something random', 'action.random');
+manager.addDocument('en', 'something random', 'action.random');
 manager.addDocument('en', 'Draw a tiger', 'action.draw');
 manager.addDocument('en', 'can we have a drawing of tiger', 'action.draw');
 manager.addDocument('en', 'can you draw a tiger for us', 'action.draw');
+manager.addDocument('en', 'draw picture', 'action.draw');
+manager.addDocument('en', 'draw a picture', 'action.draw');
+manager.addDocument('en', 'dcan you get a image of tiger for us', 'action.draw');
  
 // Train also the NLG
 manager.addAnswer('en', 'action.draw', 'Draw');
@@ -37,7 +40,7 @@ router.post('/', async(req, res, next) =>{
         await manager.train();
         manager.save();
         const response = await manager.process('en', req.body.statement);
-        console.log(response);
+        console.log(JSON.stringify(response,null,2));
         res.json({res:response});
   });
 

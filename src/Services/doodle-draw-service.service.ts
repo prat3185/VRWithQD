@@ -22,6 +22,25 @@ export class DoodleDrawServiceService {
       return this.http.post<string>('/api/v1/nlp',{statement},httpOptions)
   }
 
+  getFlowChartAction(statement:string):Observable<any>{
+    return this.http.post<string>('/api/v1/flowChart',{statement},httpOptions)
+  }
 
+  
+  getEntitiestoConnect(statement:string):Observable<any>{
+    return this.http.post<string>('/api/v1/flowChart/getEntities',{statement},httpOptions)
+  }
+
+
+  textToSpeech(message:string){
+    let spk = new SpeechSynthesisUtterance();
+    spk.text = message;
+    spk.volume = 1;
+    spk.pitch = 1;
+    spk.rate = 1;
+    spk.voice = speechSynthesis.getVoices()[0];
+    speechSynthesis.speak(spk);
+
+  }
 
 }

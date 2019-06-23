@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 
 var users = require('./routes/users');
 var nlp = require('./routes/nlp');
+var flowChart = require('./routes/flowChart');
 
 var app = express();
 
@@ -20,5 +21,6 @@ app.use(function(req, res, next) {
 
 app.use('/api/v1/users', users);
 app.use('/api/v1/nlp', nlp);
+app.use('/api/v1/flowChart', flowChart);
 
 module.exports = app;

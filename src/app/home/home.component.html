@@ -1,0 +1,11 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <div  [ngStyle]="{'display':drawSuccess?'block':'none'}">
+    <canvas #canvas></canvas>
+  </div>
+  <img *ngIf="!drawSuccess" [src]="imageToDraw" id="drawImage" height="400px" width="400px" >
+  <p>Message: {{message}}</p>
+  <button [disabled]="service.started$ | async" (click)="listen()"> Listen </button>
+</div>

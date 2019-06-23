@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+    height: 84%;
+}
+body{
+    height: 100%;
+}
+
+#objectContainer {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+}
+
+#strip{
+    background-image: url("./assets/strip.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 10px;
+    height: 10px;
+    width: 100%;
+}

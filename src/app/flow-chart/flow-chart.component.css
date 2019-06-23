@@ -1,0 +1,13 @@
+.arrow{
+    stroke:rgb(0,0,0);
+    stroke-width:2; 
+    marker-end:url(#markerArrow);
+    position: absolute;
+  }
+
+  .biarrow{
+    stroke:rgb(0,0,0);
+    stroke-width:2; 
+    marker-end:url(#markerArrow);
+    marker-start:url(#markerArrow1)
+  }
