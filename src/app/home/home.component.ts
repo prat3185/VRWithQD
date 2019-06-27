@@ -23,11 +23,11 @@ export class HomeComponent implements OnInit {
   title = 'DrawDoodle';
   url = 'https://quickdrawfiles.appspot.com/drawing/';
   customSearchUrl="https://www.googleapis.com/customsearch/v1?searchType=image&imgSize=medium&imgType=photo&q=";
-  testUrl="https://cse.google.com/cse?cx=014111385582036495809:pc0enm756km&searchType=image&enableImageSearch=true&q="
-  cxa:string="014111385582036495809:pc0enm756km";
+  testUrl="https://cse.google.com/cse?cx=&searchType=image&enableImageSearch=true&q="
+  cxa:string="";
   properties='?isAnimated=false&format=json&key=';
-  key='AIzaSyCLxdiMV5-46xuFWFbdDhVoJi7DMwe-H9Q';
-  customSearchAPIKey="AIzaSyDI4eu3_jAPIJRLRE5FqWeVxnDUdiWlKWY"
+  key='';
+  customSearchAPIKey=""
   cuatomSearchProperties="&cx="+this.cxa+"&filetype=png&key=";
   customeTestProperties="&key="
   ObjectToDraw='chair';
