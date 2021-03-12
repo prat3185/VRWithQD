@@ -23,7 +23,7 @@
     "bootstrap": "^3.4.1",
     "core-js": "^2.5.4",
     "jquery": "^3.5.0",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "node-nlp": "^3.1.1",
     "pdfjs-dist": "^2.0.943",
     "rxjs": "~6.3.3",
